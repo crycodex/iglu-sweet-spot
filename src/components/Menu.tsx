@@ -1,25 +1,24 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { IceCream, Coffee, Cake } from "lucide-react";
+import heladoImage from "@/assets/menu/helado.jpg";
+import waffleImage from "@/assets/menu/waffle.jpg";
+import bebidaImage from "@/assets/menu/bebida.jpg";
 
 const Menu = () => {
   const menuItems = [
     {
-      icon: IceCream,
       title: "Helados de Yogurt Artesanal",
       description: "Cremosos helados de yogurt natural con una variedad de toppings frescos y deliciosos",
-      color: "text-primary"
+      image: heladoImage
     },
     {
-      icon: Cake,
       title: "Waffles y Postres",
       description: "Waffles recién hechos y postres caseros que endulzarán tu día",
-      color: "text-accent"
+      image: waffleImage
     },
     {
-      icon: Coffee,
       title: "Cafetería y Bebidas Calientes",
       description: "El mejor café y bebidas calientes para acompañar tu momento especial",
-      color: "text-secondary"
+      image: bebidaImage
     }
   ];
 
@@ -39,13 +38,17 @@ const Menu = () => {
           {menuItems.map((item, index) => (
             <Card 
               key={index}
-              className="text-center hover:shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-2 border-border bg-card animate-fade-in-up"
+              className="overflow-hidden text-center hover:shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-2 border-border bg-card animate-fade-in-up"
               style={{ animationDelay: `${index * 100}ms` }}
             >
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src={item.image} 
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <CardHeader>
-                <div className="mx-auto mb-4 w-20 h-20 rounded-full bg-background flex items-center justify-center shadow-[var(--shadow-soft)]">
-                  <item.icon className={`w-10 h-10 ${item.color}`} />
-                </div>
                 <CardTitle className="text-2xl">{item.title}</CardTitle>
               </CardHeader>
               <CardContent>
