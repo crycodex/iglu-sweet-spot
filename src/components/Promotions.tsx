@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar, Gift } from "lucide-react";
-import waffleImage from "@/assets/waffle-promo.jpg";
-import loyaltyImage from "@/assets/loyalty-card.jpg";
+import waffleImage from "@/assets/promociones/waffle.jpg";
+import heladoImage from "@/assets/promociones/helado.jpg";
 
 const Promotions = () => {
   return (
@@ -48,7 +48,7 @@ const Promotions = () => {
           <Card className="overflow-hidden hover:shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-2 border-border animate-fade-in-up">
             <div className="relative h-64 overflow-hidden">
               <img 
-                src={loyaltyImage} 
+                src={heladoImage} 
                 alt="Tarjeta de lealtad con helados"
                 className="w-full h-full object-cover"
               />

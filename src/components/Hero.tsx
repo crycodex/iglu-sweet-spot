@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import logo from "@/assets/logo/logo_remove.png";
-import heroImage from "@/assets/hero-yogurt.jpg";
+import heroImage from "@/assets/hero/niña.jpg";
 import cityImage from "@/assets/hero/city.png";
 
 const Hero = () => {
@@ -15,7 +15,7 @@ const Hero = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[linear-gradient(var(--gradient-hero))] pt-20"
       style={{
         backgroundImage: `url(${cityImage})`,
-        backgroundSize: '1500px auto',
+        backgroundSize: '1400px auto',
         backgroundPosition: 'bottom center',
         backgroundRepeat: 'no-repeat'
       }}
@@ -32,7 +32,7 @@ const Hero = () => {
               <img 
                 src={heroImage} 
                 alt="Helado de yogurt artesanal con fresas y arándanos"
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover "
               />
             </div>
           </div>
