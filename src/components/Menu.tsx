@@ -1,4 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import heladoImage from "@/assets/menu/helado.jpg";
 import waffleImage from "@/assets/menu/waffle.jpg";
 import bebidaImage from "@/assets/menu/bebida.jpg";
@@ -58,6 +60,17 @@ const Menu = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+        
+        <div className="text-center mt-12">
+          <Button 
+            size="lg" 
+            className="text-lg px-8 py-6"
+            onClick={() => window.open("https://drive.google.com/file/d/1fHtjcRx3jRvgHH4WllukozRRJAW6wSeo/view?usp=drive_link", "_blank")}
+          >
+            Ver Menú Completo
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
         </div>
       </div>
     </section>

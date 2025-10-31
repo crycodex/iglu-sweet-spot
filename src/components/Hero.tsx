@@ -26,6 +26,25 @@ const Hero = () => {
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight animate-slide-in-left">
               <img src={logo.toString()} alt="iglu"  />
             </h1>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+              <Button 
+                size="lg" 
+                className="text-lg px-8 py-6 animate-fade-in-up"
+                onClick={() => window.open("https://drive.google.com/file/d/1fHtjcRx3jRvgHH4WllukozRRJAW6wSeo/view?usp=drive_link", "_blank")}
+              >
+                Ver Menú Completo
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="text-lg px-8 py-6 animate-fade-in-up"
+                style={{ animationDelay: "100ms" }}
+                onClick={scrollToPromotions}
+              >
+                Ver Promociones
+              </Button>
+            </div>
           </div>
           <div className="relative animate-float">
             <div className="relative rounded-3xl overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card)] hover:scale-[1.02] transition-all duration-500">
