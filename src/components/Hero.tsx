@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import logo from "@/assets/logo/logo_remove.png";
 import heroImage from "@/assets/hero-yogurt.jpg";
+import cityImage from "@/assets/hero/city.png";
 
 const Hero = () => {
   const scrollToPromotions = () => {
@@ -9,7 +10,16 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[linear-gradient(var(--gradient-hero))] pt-20">
+    <section 
+      id="hero" 
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[linear-gradient(var(--gradient-hero))] pt-20"
+      style={{
+        backgroundImage: `url(${cityImage})`,
+        backgroundSize: '1500px auto',
+        backgroundPosition: 'bottom center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 text-center md:text-left animate-fade-in">
