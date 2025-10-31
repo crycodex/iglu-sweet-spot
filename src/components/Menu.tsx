@@ -24,7 +24,7 @@ const Menu = () => {
   ];
 
   return (
-    <section className="py-24 bg-muted">
+    <section id="menu" className="py-24 bg-muted scroll-mt-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground">
@@ -39,7 +39,8 @@ const Menu = () => {
           {menuItems.map((item, index) => (
             <Card 
               key={index}
-              className="text-center hover:shadow-[var(--shadow-card)] transition-all hover:-translate-y-2 border-border bg-card"
+              className="text-center hover:shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-2 border-border bg-card animate-fade-in-up"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
               <CardHeader>
                 <div className="mx-auto mb-4 w-20 h-20 rounded-full bg-background flex items-center justify-center shadow-[var(--shadow-soft)]">

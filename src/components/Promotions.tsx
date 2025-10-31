@@ -5,7 +5,7 @@ import loyaltyImage from "@/assets/loyalty-card.jpg";
 
 const Promotions = () => {
   return (
-    <section id="promotions" className="py-24 bg-background">
+    <section id="promotions" className="py-24 bg-background scroll-mt-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground">
@@ -17,7 +17,7 @@ const Promotions = () => {
         </div>
         
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          <Card className="overflow-hidden hover:shadow-[var(--shadow-card)] transition-all hover:-translate-y-2 border-border">
+          <Card className="overflow-hidden hover:shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-2 border-border animate-fade-in-up">
             <div className="relative h-64 overflow-hidden">
               <img 
                 src={waffleImage} 
@@ -45,7 +45,7 @@ const Promotions = () => {
             </CardContent>
           </Card>
 
-          <Card className="overflow-hidden hover:shadow-[var(--shadow-card)] transition-all hover:-translate-y-2 border-border">
+          <Card className="overflow-hidden hover:shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-2 border-border animate-fade-in-up">
             <div className="relative h-64 overflow-hidden">
               <img 
                 src={loyaltyImage} 

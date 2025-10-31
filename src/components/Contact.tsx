@@ -7,7 +7,7 @@ const Contact = () => {
       icon: MapPin,
       title: "Ubicación",
       content: "Visítanos en nuestra heladería",
-      details: "[Tu dirección aquí]"
+      details: "Calle Simón Bolívar y Juan de Velasco"
     },
     {
       icon: Clock,
@@ -24,7 +24,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-background">
+    <section id="contact" className="py-24 bg-background scroll-mt-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground">
@@ -39,7 +39,8 @@ const Contact = () => {
           {contactInfo.map((item, index) => (
             <Card 
               key={index}
-              className="text-center hover:shadow-[var(--shadow-card)] transition-all hover:-translate-y-2 border-border"
+              className="text-center hover:shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-2 border-border animate-fade-in-up"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
               <CardContent className="pt-8 space-y-4">
                 <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
@@ -58,21 +59,21 @@ const Contact = () => {
           <div className="flex justify-center gap-6">
             <a 
               href="#" 
-              className="w-14 h-14 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all hover:scale-110"
+              className="w-14 h-14 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-300 hover:scale-110"
               aria-label="Instagram"
             >
               <Instagram className="w-6 h-6" />
             </a>
             <a 
               href="#" 
-              className="w-14 h-14 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all hover:scale-110"
+              className="w-14 h-14 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-300 hover:scale-110"
               aria-label="Facebook"
             >
               <Facebook className="w-6 h-6" />
             </a>
             <a 
               href="#" 
-              className="w-14 h-14 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all hover:scale-110"
+              className="w-14 h-14 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-300 hover:scale-110"
               aria-label="WhatsApp"
             >
               <Phone className="w-6 h-6" />
