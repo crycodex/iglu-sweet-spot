@@ -1,0 +1,87 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { MapPin, Clock, CreditCard, Instagram, Facebook, Phone } from "lucide-react";
+
+const Contact = () => {
+  const contactInfo = [
+    {
+      icon: MapPin,
+      title: "Ubicación",
+      content: "Visítanos en nuestra heladería",
+      details: "[Tu dirección aquí]"
+    },
+    {
+      icon: Clock,
+      title: "Horario de Atención",
+      content: "Lunes a Sábado: 9:00 AM - 9:00 PM",
+      details: "Domingo: 11:00 AM - 9:00 PM"
+    },
+    {
+      icon: CreditCard,
+      title: "Métodos de Pago",
+      content: "Efectivo, Transferencias Bancarias",
+      details: "De Una"
+    }
+  ];
+
+  return (
+    <section id="contact" className="py-24 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16 space-y-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+            Visítanos
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Estamos listos para atenderte
+          </p>
+        </div>
+        
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+          {contactInfo.map((item, index) => (
+            <Card 
+              key={index}
+              className="text-center hover:shadow-[var(--shadow-card)] transition-all hover:-translate-y-2 border-border"
+            >
+              <CardContent className="pt-8 space-y-4">
+                <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                  <item.icon className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground">{item.title}</h3>
+                <p className="text-muted-foreground">{item.content}</p>
+                <p className="text-foreground font-medium">{item.details}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <div className="text-center space-y-6">
+          <h3 className="text-2xl font-bold text-foreground">Síguenos en Redes Sociales</h3>
+          <div className="flex justify-center gap-6">
+            <a 
+              href="#" 
+              className="w-14 h-14 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all hover:scale-110"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-6 h-6" />
+            </a>
+            <a 
+              href="#" 
+              className="w-14 h-14 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all hover:scale-110"
+              aria-label="Facebook"
+            >
+              <Facebook className="w-6 h-6" />
+            </a>
+            <a 
+              href="#" 
+              className="w-14 h-14 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all hover:scale-110"
+              aria-label="WhatsApp"
+            >
+              <Phone className="w-6 h-6" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
