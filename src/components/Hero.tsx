@@ -1,13 +1,40 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
 import logo from "@/assets/logo/logo_remove.png";
-import heroImage from "@/assets/hero/niña.jpg";
 import cityImage from "@/assets/hero/city.png";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel";
+import slider1 from "@/assets/hero/slider/1.jpg";
+import slider2 from "@/assets/hero/slider/2.jpg";
+import slider3 from "@/assets/hero/slider/3.jpg";
+import slider4 from "@/assets/hero/slider/4.jpg";
 
 const Hero = () => {
+  const [api, setApi] = useState<CarouselApi>();
   const scrollToPromotions = () => {
     document.getElementById("promotions")?.scrollIntoView({ behavior: "smooth" });
   };
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 3000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [api]);
 
   return (
     <section 
@@ -48,11 +75,55 @@ const Hero = () => {
           </div>
           <div className="relative animate-float">
             <div className="relative rounded-3xl overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card)] hover:scale-[1.02] transition-all duration-500">
-              <img 
-                src={heroImage} 
-                alt="Helado de yogurt artesanal con fresas y arándanos"
-                className="w-full h-auto object-cover "
-              />
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                setApi={setApi}
+                className="w-full"
+              >
+                <CarouselContent>
+                  <CarouselItem>
+                    <div className="w-full aspect-[4/3] overflow-hidden">
+                      <img 
+                        src={slider1} 
+                        alt="Helado de yogurt artesanal"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="w-full aspect-[4/3] overflow-hidden">
+                      <img 
+                        src={slider2} 
+                        alt="Helado de yogurt artesanal"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="w-full aspect-[4/3] overflow-hidden">
+                      <img 
+                        src={slider3} 
+                        alt="Helado de yogurt artesanal"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="w-full aspect-[4/3] overflow-hidden">
+                      <img 
+                        src={slider4} 
+                        alt="Helado de yogurt artesanal"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious className="left-2 bg-white/80 hover:bg-white" />
+                <CarouselNext className="right-2 bg-white/80 hover:bg-white" />
+              </Carousel>
             </div>
           </div>
         </div>
