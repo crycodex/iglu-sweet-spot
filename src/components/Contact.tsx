@@ -54,6 +54,24 @@ const Contact = () => {
           ))}
         </div>
 
+        <div className="max-w-6xl mx-auto mb-16">
+          <Card className="overflow-hidden border-border">
+            <CardContent className="p-0">
+              <iframe
+                src="https://www.google.com/maps?q=0.3483977,-78.1188256&hl=es&z=15&output=embed"
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full"
+                title="Ubicación de Heladería Iglu - Calle Simón Bolívar y Juan de Velasco"
+              />
+            </CardContent>
+          </Card>
+        </div>
+
         <div className="text-center space-y-6">
           <h3 className="text-2xl font-bold text-foreground">Síguenos en Redes Sociales</h3>
           <div className="flex justify-center gap-6">
